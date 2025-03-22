@@ -1,6 +1,5 @@
-<style>
 a {
-    color: black;
+    color: green;
     transition: background-color 0.5s;
     text-decoration: none;
 }
@@ -15,4 +14,4 @@ a:hover {
     color: red;
     transition: color 0.5s;
 }
-</style>
+

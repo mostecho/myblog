@@ -1,15 +1,3 @@
-a {
-    color: green;
-    transition: background-color 0.5s;
-    text-decoration: none;
-}
-
-a:hover {
-    background-color: gold;
-    text-decoration: underline;
-    text-decoration-color: brown;
-}
-
 #ver:hover {
     color: red;
     transition: color 0.5s;
@@ -23,7 +11,7 @@ ul {
     margin: 0;
     padding: 10px;
 }
-  
+ 
   .example-2 {
     display: flex;
     justify-content: center;

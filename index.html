@@ -7,6 +7,7 @@
     <title>Stranger Welcome!</title>
     <link rel="stylesheet" href="CSS样式/Css1.css">
     <link rel="stylesheet" href="CSS样式/shijianzhou.css">
+    <link rel="stylesheet" href="./CSS样式/kuaisu.css">
     <style type="text/css">
         body {
         background: url("./素材库/picture/beijing.jpg") no-repeat center center fixed; 
@@ -20,100 +21,191 @@
 </head>
 
 <body>
-      <div class="shell" id="shell">
-        <div class="header">
-          <h1 style="text-align: center; color: white; font-size:300%;  padding: 0%; " >欢迎来到我们的个人网站</h1>
-          <h2 class="title">我们的故事</h2>
-          <h3 class="subtitle">才正要开始</h3>
+  <div class="shell" id="shell">
+    <div class="header">
+        <h2 class="title">我们的故事</h2>
+        <h3 class="subtitle">才正要开始</h3>
+    </div>
+    <div class="timeline">
+
+
+        <div class="item" data-text="《舞！舞！舞！》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu1.jpg" />
+                <h2 class="content-title">2001</h2>
+                <p class="content-desc">
+                    你要做一个不动声色的大人了。不准情绪化，不准偷偷想念，不准回头看。去过自己另外的生活。你要听话，不是所有的鱼都会生活在同一片海里。
+                </p>
+            </div>
         </div>
-        <div class="timeline">
+
+        <div class="item" data-text="《你的孤独，虽败犹荣》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu2.jpg" />
+                <h2 class="content-title">2002</h2>
+                <p class="content-desc">
+                    如果你停止，就是谷底。如果你还在继续，
+                    就是上坡。这是我听过关于人生低谷最好的阐述。
+                </p>
+            </div>
         </div>
-      </div>
-    
-      <script>
-       function createChild() {
-        let box = document.querySelector('.timeline');
-        
-        const itemsData = [
-            {
-                bookTitle: '《你的孤独，虽败犹荣》',
-                year: '2002',
-                description: '如果你停止，就是谷底。如果你还在继续，就是上坡，这是我听过关于人生低谷最好的阐述。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《百年孤独》',
-                year: '2003',
-                description: '生命中真正重要的不是你遭遇了什么，而是你记住了哪些事，又是如何铭记的。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《平凡的世界》',
-                year: '2004',
-                description: '生活不能等待别人来安排，要自己去争取和奋斗；而不论其结果是喜是悲，但可以慰藉的是，你总不枉在这世界上活了一场。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《追风筝的人》',
-                year: '2005',
-                description: '为你，千千万万遍。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《老人与海》',
-                year: '2006',
-                description: '一个人并不是生来要给打败的，你尽可把他消灭掉，可就是打不败他。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《简·爱》',
-                year: '2007',
-                description: '我不是根据习俗、常规，甚至也不是血肉之躯同你说话，而是我的灵魂同你的灵魂在对话，就仿佛我们两人穿过坟墓，站在上帝脚下，彼此平等——本来就如此！',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《呐喊》',
-                year: '2008',
-                description: '不在沉默中爆发，就在沉默中灭亡。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《骆驼祥子》',
-                year: '2009',
-                description: '雨下给富人，也下给穷人；下给义人，也下给不义的人。其实，雨并不公道，因为下落在一个没有公道的世界上。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《围城》',
-                year: '2010',
-                description: '围在城里的人想逃出来，城外的人想冲进去，对婚姻也罢，职业也罢，人生的愿望大都如此。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《傲慢与偏见》',
-                year: '2011',
-                description: '凡是有钱的单身汉，总想娶位太太，这已经成了一条举世公认的真理。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            }
-        ];
-    
-        itemsData.forEach(item => {
-            const child = `
-                <div class="item" data-text="${item.bookTitle}">
-                    <div class="content">
-                        <img src="${item.imgSrc}" alt="" class="img">
-                        <h2 class="content-title">${item.year}</h2>
-                        <p class="content-desc">
-                            ${item.description}
-                        </p>
-                    </div>
-                </div>
-            `;
-            box.innerHTML += child;
-        });
-    }
-    createChild();    
-      </script>
+
+        <div class="item" data-text="《萤火之森》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu3.jpg" />
+                <h2 class="content-title">2003</h2>
+                <p class="content-desc">
+                    如果时光可以倒流，我还是会选择认识你，虽然会伤痕累累，但是心中的温暖记忆是谁都无法给予的。谢谢你来过我的世界。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《红玫瑰与白玫瑰》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu4.jpg" />
+                <h2 class="content-title">2004</h2>
+                <p class="content-desc">
+                    娶了红玫瑰，久而久之，红玫瑰就变成了墙上的一抹蚊子血，白玫瑰还是“床前明月光； 娶了白玫瑰，白玫瑰就是衣服上的一粒饭渣子，红的还是心口上的一颗朱砂痣。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《小王子》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu5.jpg" />
+                <h2 class="content-title">2005</h2>
+                <p class="content-desc">
+                    如果你爱上了某个星球的一朵花。那么，只要在夜晚仰望星空，就会觉得漫天的繁星就像一朵朵盛开的花。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《平凡的世界》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu6.jpg" />
+                <h2 class="content-title">2006</h2>
+                <p class="content-desc">
+                    人生啊，是这样不可预测，没有永恒的痛苦，也没有永恒的幸福，生活像流水一般，有时是那么平展，有时又是那么曲折。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《银魂》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu7.jpg" />
+                <h2 class="content-title">2007</h2>
+                <p class="content-desc">
+                    人生，就像肥皂泡一样。风一吹就呼呼的飞上了天，注意到的时候，却啪地一下消失了。就在即将破裂的瞬间，想要自己飞得更高。但回过神来的时候，却总是来不及。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《小说灯笼》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu8.jpg" />
+                <h2 class="content-title">2008</h2>
+                <p class="content-desc">
+                    日子只能一天一天好好地过，别无他法。别烦恼明天的事，明天的烦恼让明天去烦吧。我只想开心、努力、温柔待人地过完今天一天。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《蓝，另一种蓝》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu9.jpg" />
+                <h2 class="content-title">2009</h2>
+                <p class="content-desc">
+                    人有的时候真的是奇怪 ，选择了的会后悔，放弃了的会遗憾，但完美只能是一种理想，而不可能是一种存在。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《道林・格雷的画像》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu10.jpg" />
+                <h2 class="content-title">2010</h2>
+                <p class="content-desc">
+                    不要虚掷你的黄金时代，不要去倾听枯燥乏味的东西，不要设法挽留无望的失败，不要把你的生命献给无知、平庸和低俗。
+                </p>
+            </div>
+        </div>
+
+
+        <!--  -->
+        <div class="item" data-text="《舞！舞！舞！》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu11.jpg" />
+                <h2 class="content-title">2011</h2>
+                <p class="content-desc">
+                    你要做一个不动声色的大人了。不准情绪化，不准偷偷想念，不准回头看。去过自己另外的生活。你要听话，不是所有的鱼都会生活在同一片海里。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《你的孤独，虽败犹荣》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu7.jpg" />
+                <h2 class="content-title">2012</h2>
+                <p class="content-desc">
+                    如果你停止，就是谷底。如果你还在继续，就是上坡。这是我听过关于人生低谷最好的阐述。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《萤火之森》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu7.jpg" />
+                <h2 class="content-title">2013</h2>
+                <p class="content-desc">
+                    如果时光可以倒流，我还是会选择认识你，虽然会伤痕累累，但是心中的温暖记忆是谁都无法给予的。谢谢你来过我的世界。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《红玫瑰与白玫瑰》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu7.jpg" />
+                <h2 class="content-title">2014</h2>
+                <p class="content-desc">
+                    娶了红玫瑰，久而久之，红玫瑰就变成了墙上的一抹蚊子血，白玫瑰还是“床前明月光； 娶了白玫瑰，白玫瑰就是衣服上的一粒饭渣子，红的还是心口上的一颗朱砂痣。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《小王子》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu9.jpg" />
+                <h2 class="content-title">2015</h2>
+                <p class="content-desc">
+                    如果你爱上了某个星球的一朵花。那么，只要在夜晚仰望星空，就会觉得漫天的繁星就像一朵朵盛开的花。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《平凡的世界》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu7.jpg" />
+                <h2 class="content-title">2016</h2>
+                <p class="content-desc">
+                    人生啊，是这样不可预测，没有永恒的痛苦，也没有永恒的幸福，生活像流水一般，有时是那么平展，有时又是那么曲折。
+                </p>
+            </div>
+        </div>
+
+        <div class="item" data-text="《银魂》">
+            <div class="content">
+                <img class="img" src="./素材库/picture/tu7.jpg" />
+                <h2 class="content-title">2017</h2>
+                <p class="content-desc">
+                    人生，就像肥皂泡一样。风一吹就呼呼的飞上了天，注意到的时候，却啪地一下消失了。就在即将破裂的瞬间，想要自己飞得更高。但回过神来的时候，却总是来不及。
+                </p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- <div class="footer"><a>页脚</a>   用来间隔下面的页面 -->
+  </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
       <script src="./素材库/js样式/shijianzhou.js"></script>
 
       <div class="card-content" style="text-align: center;">
@@ -124,7 +216,7 @@
       </div>
   
       <p style="text-align: center; font-size:large;margin-left:20px;">此网页使用GitHub托管搭建 : 
-          <a href="https://github.com/mostecho/monstecho.github.io" style="color: white;">项目地址</a></p>
+          <a href="https://github.com/mostecho/monstecho.github.io">项目地址</a></p>
     
       <div style="text-align: center;">
       <span id="element" style="color: white; font-size: x-large;" ></span>

@@ -145,6 +145,17 @@
   font-weight: normal;
 }
 
+.footer {
+  padding: 90px 0;
+  text-align: center;
+}
+
+.footer a {
+  color: yellow;
+  font-size: large;
+  display: inline-block;
+}
+
 @media only screen and (max-width: 767px) {
   .item {
       align-self: baseline !important;

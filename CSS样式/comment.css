@@ -1,0 +1,24 @@
+.comment{
+    border-width: 0.5px;
+    border-style: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    font-size: small ;
+    /*text-align: left;*/
+    /*vertical-align: text-top;*/
+    background-color: #f0f0f4;
+    color: black;
+    word-wrap: break-word;
+}
+.center{
+    text-indent: 55px;
+    color: white;
+}
+.submit{
+    border-style: none;
+    border-radius: 5px;
+    margin-right: 50px;
+    background-color: #f0f0f4;
+
+}

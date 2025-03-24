@@ -6,152 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stranger Welcome!</title>
     <link rel="stylesheet" href="CSS样式/Css1.css">
-    <link rel="stylesheet" href="CSS样式/shijianzhou.css">
+    <link rel="stylesheet" href="CSS样式/comment.css">
+
     <style type="text/css">
         body {
-        background: url("./素材库/picture/beijing.jpg") no-repeat center center fixed; 
+        background: url("./素材库/picture/beijing.jpg") no-repeat center center fixed; /* 图片背景 */
         -webkit-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         }
-    </style>
+        </style>
 
     <!-- <embed src="./素材库/man!.mp3" hidden="flase" autostart="true" loop="true"> -->
 </head>
 
 <body>
-      <div class="shell" id="shell">
-        <div class="header">
-          <h1 style="text-align: center; color: white; font-size:300%;  padding: 0%; " >欢迎来到我们的个人网站</h1>
-          <h2 class="title">我们的故事</h2>
-          <h3 class="subtitle">才正要开始</h3>
-        </div>
-        <div class="timeline">
-        </div>
-      </div>
-    
-      <script>
-       function createChild() {
-        let box = document.querySelector('.timeline');
-        
-        const itemsData = [
-            {
-                bookTitle: '《你的孤独，虽败犹荣》',
-                year: '2002',
-                description: '如果你停止，就是谷底。如果你还在继续，就是上坡，这是我听过关于人生低谷最好的阐述。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《百年孤独》',
-                year: '2003',
-                description: '生命中真正重要的不是你遭遇了什么，而是你记住了哪些事，又是如何铭记的。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《平凡的世界》',
-                year: '2004',
-                description: '生活不能等待别人来安排，要自己去争取和奋斗；而不论其结果是喜是悲，但可以慰藉的是，你总不枉在这世界上活了一场。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《追风筝的人》',
-                year: '2005',
-                description: '为你，千千万万遍。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《老人与海》',
-                year: '2006',
-                description: '一个人并不是生来要给打败的，你尽可把他消灭掉，可就是打不败他。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《简·爱》',
-                year: '2007',
-                description: '我不是根据习俗、常规，甚至也不是血肉之躯同你说话，而是我的灵魂同你的灵魂在对话，就仿佛我们两人穿过坟墓，站在上帝脚下，彼此平等——本来就如此！',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《呐喊》',
-                year: '2008',
-                description: '不在沉默中爆发，就在沉默中灭亡。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《骆驼祥子》',
-                year: '2009',
-                description: '雨下给富人，也下给穷人；下给义人，也下给不义的人。其实，雨并不公道，因为下落在一个没有公道的世界上。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《围城》',
-                year: '2010',
-                description: '围在城里的人想逃出来，城外的人想冲进去，对婚姻也罢，职业也罢，人生的愿望大都如此。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            },
-            {
-                bookTitle: '《傲慢与偏见》',
-                year: '2011',
-                description: '凡是有钱的单身汉，总想娶位太太，这已经成了一条举世公认的真理。',
-                imgSrc: 'https://api.cyrilstudio.top/bing/image.php?size=1920x1080'
-            }
-        ];
-    
-        itemsData.forEach(item => {
-            const child = `
-                <div class="item" data-text="${item.bookTitle}">
-                    <div class="content">
-                        <img src="${item.imgSrc}" alt="" class="img">
-                        <h2 class="content-title">${item.year}</h2>
-                        <p class="content-desc">
-                            ${item.description}
-                        </p>
-                    </div>
-                </div>
-            `;
-            box.innerHTML += child;
-        });
-    }
-    createChild();    
-      </script>
-      <script src="./素材库/js样式/shijianzhou.js"></script>
 
-      <div class="card-content" style="text-align: center;">
-        <canvas id="canvas" style="width: 20%;" height="20px" width="20px"></canvas>
-        <script>
-          (function(){var t=820;var a=250;var r=7;var n=10;var e=.65;var f;var o=[];const v=["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"];var h=[];var u=[[[0,0,1,1,1,0,0],[0,1,1,0,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,0,1,1,0],[0,0,1,1,1,0,0]],[[0,0,0,1,1,0,0],[0,1,1,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[1,1,1,1,1,1,1]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,0,0,1,1],[1,1,1,1,1,1,1]],[[1,1,1,1,1,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,0,1,1,1,0],[0,0,1,1,1,1,0],[0,1,1,0,1,1,0],[1,1,0,0,1,1,0],[1,1,1,1,1,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,1,1]],[[1,1,1,1,1,1,1],[1,1,0,0,0,0,0],[1,1,0,0,0,0,0],[1,1,1,1,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[1,1,1,1,1,1,1],[1,1,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,1,1,0,0,0,0]],[[0,0,0,0],[0,0,0,0],[0,1,1,0],[0,1,1,0],[0,0,0,0],[0,0,0,0],[0,1,1,0],[0,1,1,0],[0,0,0,0],[0,0,0,0]]];function l(t){var a=[];f.fillStyle="#005EAC";var r=new Date;var e=70,o=30;var v=r.getHours();var u=Math.floor(v/10);var l=v%10;a.push({num:u});a.push({num:l});a.push({num:10});var c=r.getMinutes();var u=Math.floor(c/10);var l=c%10;a.push({num:u});a.push({num:l});a.push({num:10});var M=r.getSeconds();var u=Math.floor(M/10);var l=M%10;a.push({num:u});a.push({num:l});for(var p=0;p<a.length;p++){a[p].offsetX=e;e=m(e,o,a[p].num,t);if(p<a.length-1){if(a[p].num!=10&&a[p+1].num!=10){e+=n}}}if(h.length==0){h=a}else{for(var C=0;C<h.length;C++){if(h[C].num!=a[C].num){s(a[C]);h[C].num=a[C].num}}}i(t);g();return r}function s(t){var a=t.num;var n=u[a];for(var e=0;e<n.length;e++){for(var f=0;f<n[e].length;f++){if(n[e][f]==1){var h={offsetX:t.offsetX+r+r*2*f,offsetY:30+r+r*2*e,color:v[Math.floor(Math.random()*v.length)],g:1.5+Math.random(),vx:Math.pow(-1,Math.ceil(Math.random()*10))*4+Math.random(),vy:-5};o.push(h)}}}}function i(t){for(var a=0;a<o.length;a++){t.beginPath();t.fillStyle=o[a].color;t.arc(o[a].offsetX,o[a].offsetY,r,0,2*Math.PI);t.fill()}}function g(){var n=0;for(var f=0;f<o.length;f++){var v=o[f];v.offsetX+=v.vx;v.offsetY+=v.vy;v.vy+=v.g;if(v.offsetY>a-r){v.offsetY=a-r;v.vy=-v.vy*e}if(v.offsetX>r&&v.offsetX<t-r){o[n]=o[f];n++}}for(;n<o.length;n++){o.pop()}}function m(t,a,n,e){var f=u[n];for(var o=0;o<f.length;o++){for(var v=0;v<f[o].length;v++){if(f[o][v]==1){e.beginPath();e.arc(t+r+r*2*v,a+r+r*2*o,r,0,2*Math.PI);e.fill()}}}e.beginPath();t+=f[0].length*r*2;return t}var c=document.getElementById("canvas");c.width=t;c.height=a;f=c.getContext("2d");var M=new Date;setInterval(function(){f.clearRect(0,0,f.canvas.width,f.canvas.height);l(f)},50)})();
-        </script>
-      </div>
   
-      <p style="text-align: center; font-size:large;margin-left:20px;">此网页使用GitHub托管搭建 : 
-          <a href="https://github.com/mostecho/monstecho.github.io" style="color: white;">项目地址</a></p>
-    
-      <div style="text-align: center;">
-      <span id="element" style="color: white; font-size: x-large;" ></span>
-      <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-      <script>
-          var typed = new Typed('#element', {
-            strings: ['<i>我爱我的梦想，即使失败也无法阻止！</i>', '你的梦想又是什么呢，如果你弄清楚了就勇敢去做吧！'],
-            typeSpeed: 100, //打字速度
-            smartBackspace: true, // 开启智能退格 默认false
-            backSpeed: 100,//后退速度
-            backDelay: 500,//后退延迟
-            loop:true,//是否循环 默认false
-            startDelay:1000,//起始时间
-            fadeOut:true,//淡出效果 淡出和后退不能同时使用，使用淡出默认覆盖后退
-          });
-      </script>
-      </div>
-    
-        <div style="text-align: center;">
-        <!-- <img src="./素材库/picture/kugua.jpg" alt="图片无法显示"title="龙脸苦瓜大王"> -->
-        <br>
-        <h2 style="margin: 0px; padding: 0px;">孩子们，我回来了</h2><br>
-    
-        <img src="./素材库/picture/我回来了，孩子们.jpg" alt="你网挂了"title="特蕾西娅" width="300"> <br>
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1354451040&auto=1&height=66"></iframe>
-        </div>
-    
+    <h1 style="text-align: center; color:white;">欢迎来到我的个人网站</h1>
+    <p style="text-align: center; font-size:large;margin-left:20px;color:red;">目前网站暂时还未完善，预计4月可以完成基本页面</p>
+    <p style="text-align: center; font-size:large;margin-left:20px;color: blueviolet;">此网页使用GitHub托管搭建 : 
+      <a href="https://github.com/mostecho/monstecho.github.io">项目地址</a></p>
+
+    <div style="text-align: center;">
+    <span id="element" style="color: white; font-size: x-large;" ></span>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed('#element', {
+        strings: ['<i>我爱我的梦想，即使失败也无法阻止！</i>', '你的梦想又是什么呢，如果你弄清楚了就勇敢去做吧！'],
+        typeSpeed: 100, //打字速度
+        smartBackspace: true, // 开启智能退格 默认false
+        backSpeed: 100,//后退速度
+        backDelay: 500,//后退延迟
+        loop:true,//是否循环 默认false
+        startDelay:1000,//起始时间
+        fadeOut:true,//淡出效果 淡出和后退不能同时使用，使用淡出默认覆盖后退
+      });
+    </script>
+    </div>
+
+    <div style="text-align: center;">
+    <br>
+    <h2 style="margin: 0px; padding: 0px;">孩子们，我回来了</h2><br>
+
+    <img src="./素材库/picture/我回来了，孩子们.jpg" alt="你网挂了"title="特蕾西娅" width="300"> <br>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1354451040&auto=1&height=66"></iframe>
+    </div>
+
 <ul class="example-2">
   <li class="icon-content">
     <a
@@ -225,8 +126,16 @@
   </li>
 </ul>
 
-  <p style="text-align:center; position:relative; bottom:0;padding:5px;" id="ver">blog ver 0.2.0</p>
-
+  <p style="text-align:center; position:fixed; width: 100%; bottom:0;padding:5px;" id="ver">blog ver 0.1.1</p>
+<!--    留言区  -->
+    <div>
+     <div class="center"><h1>留言区</h1></div>
+        <input class="comment" type="text" placeholder="写下一些话来证明你来过吧！！">
+        <br>
+        <br>
+        <input type="submit" value="发布" class="submit">
+    </div>
+    
 </body>
 
 </html>

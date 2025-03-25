@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第二位面</title>
-    <link rel="stylesheet" href="./CSS样式/Css1.css">
-</head>
-<body>
-    <div class="mid-postion"><h1>留言区</h1></div>
-    <p onclick="jump('index.html')" style="text-align: center;"> 去往第一位面</p>
 
-    <!-- From Uiverse.io by JkHuger 黑与白的切换 -->
-    <label for="theme" class="theme">
-	<span class="theme__toggle-wrap">
-		<input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
-		<span class="theme__fill"></span>
-		<span class="theme__icon">
-			<span class="theme__icon-part"></span>
-			<span class="theme__icon-part"></span>
-			<span class="theme__icon-part"></span>
-			<span class="theme__icon-part"></span>
-			<span class="theme__icon-part"></span>
-			<span class="theme__icon-part"></span>
-			<span class="theme__icon-part"></span>
-			<span class="theme__icon-part"></span>
-			<span class="theme__icon-part"></span>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>第二位面</title>
+	<link rel="stylesheet" href="./CSS样式/Css1.css">
+	<link rel="stylesheet" href="./CSS样式/jiazai.css">
+</head>
+
+<body>
+	<div class="mid-postion">
+		<h1>留言区</h1>
+	</div>
+
+	<div class="loading">
+		<svg viewbox='0 0 50 50'>
+			<circle r='25' cx='25' cy='25'></circle>
+		</svg>
+		<p>LOADING</p>
+	</div>
+	<p onclick="loading.in('index.html')" style="text-align: center;">去往纪年史</p>
+	<script src="./JS样式/jiazai.js"></script>
+
+	<!-- From Uiverse.io by JkHuger 黑与白的切换 -->
+	<label for="theme" class="theme">
+		<span class="theme__toggle-wrap">
+			<input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
+			<span class="theme__fill"></span>
+			<span class="theme__icon">
+				<span class="theme__icon-part"></span>
+				<span class="theme__icon-part"></span>
+				<span class="theme__icon-part"></span>
+				<span class="theme__icon-part"></span>
+				<span class="theme__icon-part"></span>
+				<span class="theme__icon-part"></span>
+				<span class="theme__icon-part"></span>
+				<span class="theme__icon-part"></span>
+				<span class="theme__icon-part"></span>
+			</span>
 		</span>
-	</span>
-    </label>
-    <!-- From Uiverse.io by JkHuger 黑与白的切换 -->
+	</label>
+	<!-- From Uiverse.io by JkHuger 黑与白的切换 -->
 
 </body>
 <script>
-    function jump(target){
-        window.location.href = target;
-    }
+	function jump(target) {
+		window.location.href = target;
+	}
 </script>
+
 </html>

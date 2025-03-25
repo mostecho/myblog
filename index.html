@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="shell" id="shell">
+<div class="shell" id="shell">
     <div class="header">
         <h2 class="title">我们的故事</h2>
         <h3 class="subtitle">才正要开始</h3>
@@ -160,6 +160,15 @@
 
         <p onclick="jump('./page1.html')" style="text-align: center;color: white; " > 去往第二位面</p>
     </div>
+</div>
+<div class="loading">
+    <svg viewbox='0 0 50 50'>
+        <circle r='25' cx='25' cy='25'></circle>
+    </svg>
+    <p>LOADING</p>
+</div>
+<p onclick="loading.in('page1.html')"></p>
+<script src="./JS样式/jiazai.js"></script>
 
     
     <ul class="example-2">
@@ -234,7 +243,6 @@
               <div class="tooltip">CSDN主页</div>
             </li>
     </ul>
-
 
 </body>
     <script>

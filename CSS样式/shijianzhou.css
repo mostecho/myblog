@@ -30,7 +30,7 @@
 
 .title {
   color: #fff;
-  font-size: 46px;
+  font-size: 50px;
   font-weight: normal;
   margin: 0;
 }
@@ -139,14 +139,13 @@
 
 .subtitle {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 16px;
+  font-size: 17px;
   letter-spacing: 5px;
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 0;
   font-weight: normal;
 }
 
 .footer {
-  padding: 90px 0;
   text-align: center;
 }
 

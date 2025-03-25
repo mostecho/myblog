@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="CSS样式/Css1.css">
     <link rel="stylesheet" href="CSS样式/shijianzhou.css">
     <link rel="stylesheet" href="./CSS样式/kuaisu.css">
+    <link rel="stylesheet" href="./CSS样式/jiazai.css">
 
 </head>
 
 <body>
-
     <div class="shell" id="shell">
     <div class="header">
         <h2 class="title">我们的故事</h2>
@@ -21,7 +21,25 @@
     </div>
     <div class="timeline">
 
-      <div class="item" data-text="《原神，启动！》">
+         <div style="text-align: center; padding:1%; margin-top: -10%;">
+            <span id="element" style="color: white; font-size: x-large;" ></span>
+            <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+      
+            <script>
+                var typed = new Typed('#element', {
+                  strings: ['<i>我爱我的梦想，即使失败也无法阻止！</i>', '你的梦想是什么呢，如果弄清楚了就勇敢去做吧！'],
+                  typeSpeed: 120, //打字速度
+                  smartBackspace: true, // 开启智能退格 默认false
+                  backSpeed: 100,//后退速度
+                  backDelay: 500,//后退延迟
+                  loop:true,//是否循环 默认false
+                  startDelay:1000,//起始时间
+                  fadeOut:true,//淡出效果 淡出和后退不能同时使用，使用淡出默认覆盖后退
+                });
+            </script>
+        </div>
+
+    <div class="item" data-text="《原神，启动！》">
         <div class="content">
             <img class="img" src="./素材库/picture/tu1.webp" />
             <h2 class="content-title">2025.3.10</h2>
@@ -132,36 +150,17 @@
             </p>
         </div>
     </div>
+    <script src="./JS样式/shijianzhou.js"></script>
 
-    <div class="footer"><a>未来的我们一定会感谢今天的我们！</a>
- 
-  </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-      <script src="./JS样式/shijianzhou.js"></script>
+    <div class="footer"><a>未来的我们一定会感谢今天的我们！</a></div>
 
-      <div style="text-align: center;">
-      <span id="element" style="color: white; font-size: x-large;" ></span>
-      <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-      <script>
-          var typed = new Typed('#element', {
-            strings: ['<i>我爱我的梦想，即使失败也无法阻止！</i>', '你的梦想是什么呢，如果弄清楚了就勇敢去做吧！'],
-            typeSpeed: 100, //打字速度
-            smartBackspace: true, // 开启智能退格 默认false
-            backSpeed: 100,//后退速度
-            backDelay: 500,//后退延迟
-            loop:true,//是否循环 默认false
-            startDelay:1000,//起始时间
-            fadeOut:true,//淡出效果 淡出和后退不能同时使用，使用淡出默认覆盖后退
-    
-          });
-      </script>
-      </div>
-    
         <div style="text-align: center;">
         <img src="./素材库/picture/我回来了，孩子们.jpg" alt="你网挂了"title="特蕾西娅" width="300"> <br>
         <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1354451040&auto=1&height=66"></iframe>
         </div>
+
+        <p onclick="jump('./page1.html')" > 去往第二位面<span>2</span></p>
+
     
         <ul class="example-2">
             <li class="icon-content">
@@ -236,9 +235,13 @@
             </li>
           </ul>
 
-  <p id="ver">blog ver 0.3.0</p>
+  <p id="ver">blog ver 0.3.1</p>
 
 </body>
-
+    <script>
+        function jump(target){
+            window.location.href = target;
+        }  //跳转第二位面
+    </script>
 </html>
 

@@ -151,8 +151,8 @@
 
 .footer a {
   color: yellow;
-  font-size: large;
-  display: inline-block;
+  font-size:x-large;
+  padding: 5%;
 }
 
 @media only screen and (max-width: 767px) {

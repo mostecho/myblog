@@ -1,14 +1,3 @@
-#ver {
-position:absolute;
-bottom:-1%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
-
-#ver:hover {
-    color: red;
-    transition: color 0.5s;
-}
 .mid-postion{
     text-align: center;
 }
@@ -16,8 +5,7 @@ transform: translate(-50%, -50%);
     color: whitesmoke;
     text-decoration: underline;
 }
-/* From Uiverse.io by JkHuger 黑与白的切换 */
-/* Default */
+
 .theme {
     display: flex;
     align-items: center;

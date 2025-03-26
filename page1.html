@@ -7,22 +7,16 @@
 	<title>第二位面</title>
 	<link rel="stylesheet" href="./CSS样式/Css1.css">
 	<link rel="stylesheet" href="./CSS样式/jiazai.css">
+	<style>
+		/* 评论区 */
+	 .comment-section { width: 80%; margin: 20px auto; }
+     textarea { width: 50%; height: 100px; padding: 10px; }
+     #comment-list li { border-bottom: 1px solid #eee; padding: 10px; }
+
+	</style>
 </head>
 
 <body>
-	<div class="mid-postion">
-		<h1>留言区</h1>
-	</div>
-
-	<div class="loading">
-		<svg viewbox='0 0 50 50'>
-			<circle r='25' cx='25' cy='25'></circle>
-		</svg>
-		<p>LOADING</p>
-	</div>
-	<p onclick="loading.in('index.html')" style="text-align: center;">去往纪年史</p>
-	<script src="./JS样式/jiazai.js"></script>
-
 	<!-- From Uiverse.io by JkHuger 黑与白的切换 -->
 	<label for="theme" class="theme">
 		<span class="theme__toggle-wrap">
@@ -43,11 +37,44 @@
 	</label>
 	<!-- From Uiverse.io by JkHuger 黑与白的切换 -->
 
+	<div class="mid-postion">
+		<header>
+			<h1>留言区</h1>
+			<div class="comment-section">
+				<form id="comment-form">
+				  <input type="text" placeholder="用户名" required>
+				  <div><textarea placeholder="请输入评论"></textarea></div>
+				  <button type="submit">提交</button>
+				</form>
+				<ul id="comment-list"></ul>
+			</div>
+		 
+	</div>
+	<div class="loading">
+		<svg viewbox='0 0 50 50'>
+			<circle r='25' cx='25' cy='25'></circle>
+		</svg>
+		<p>LOADING</p>
+	</div>
+	<p onclick="loading.in('index.html')" style="text-align: center;">去往纪年史</p>
+	<script src="./JS样式/jiazai.js"></script>
+
+
+
 </body>
 <script>
 	function jump(target) {
 		window.location.href = target;
 	}
+	document.getElementById('comment-form').addEventListener('submit', function(e) {
+       e.preventDefault();
+       const content = document.querySelector('textarea').value;
+       const newComment = document.createElement('li');
+       newComment.textContent = content;
+       document.getElementById('comment-list').appendChild(newComment);
+     });
+
+
 </script>
 
 </html>

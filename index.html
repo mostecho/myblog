@@ -6,34 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stranger Welcome!</title>
-    <link rel="stylesheet" href="CSS样式/Css1.css">
-<!--    <link rel="stylesheet" href="CSS样式/shijianzhou.css">-->
-<!--    <link rel="stylesheet" href="./CSS样式/kuaisu.css">-->
+    <link rel="stylesheet" href="CSS样式/shijianzhou.css">
+    <link rel="stylesheet" href="./CSS样式/kuaisu.css">
     <link rel="stylesheet" href="./CSS样式/jiazai.css">
     <link rel="stylesheet" href="./CSS样式/daohang.css">
 
 </head>
 
 <body>
-<ul id="nav">
-    <li class="slide1"></li>
-    <li class="slide2"></li>
-    <li><a href="./index.html">首页</a></li>
-    <li><a href="./page1.html">评论区</a></li>
-    <li><a href="#">开发日志</a></li>
-    <li><a href="#">Q&A</a></li>
-    <li><a href="#">赞助</a></li>
-</ul>
 <div class="shell" id="shell">
+    <ul id="nav">
+        <li class="slide1"></li>
+        <li class="slide2"></li>
+        <li><a href="./index.html">首页</a></li>
+        <li><a href="./page1.html">评论区</a></li>
+        <li><a href="page2.php">开发日志</a></li>
+        <li><a href="#">Q&A</a></li>
+        <li><a href="#">赞助</a></li>
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <div class="header">
         <h2 class="title">我们的故事</h2>
         <h3 class="subtitle">才正要开始</h3>
     </div>
     <div class="timeline">
         <div style="text-align: center; padding:1%; margin-top: -10%;">
-            <span id="element" style="color: white; font-size: x-large;" ></span>
             <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-      
             <script>
                 var typed = new Typed('#element', {
                   strings: ['<i>我爱我的梦想，即使失败也无法阻止！</i>', '你的梦想是什么呢，如果弄清楚了就勇敢去做吧！'],
@@ -168,18 +168,19 @@
         <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1354451040&auto=1&height=66"></iframe>
         </div>
 
-        <p onclick="jump('./page1.html')" style="text-align: center;color: white; " > 去往第二位面</p>
+
     </div>
 </div>
+
 <div class="loading">
     <svg viewbox='0 0 50 50'>
         <circle r='25' cx='25' cy='25'></circle>
     </svg>
     <p>LOADING</p>
 </div>
+
 <p onclick="loading.in('page1.html')"></p>
 <script src="./JS样式/jiazai.js"></script>
-
     
     <ul class="example-2">
             <li class="icon-content">
@@ -253,7 +254,7 @@
               <div class="tooltip">CSDN主页</div>
             </li>
     </ul>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="./JS样式/daohang.js"></script>
 
 </body>
@@ -262,6 +263,5 @@
             window.location.href = target;
         }  //跳转第二位面
     </script>
-
-        </html>
+</html>
 

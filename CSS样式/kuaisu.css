@@ -1,13 +1,10 @@
-ul {
-    list-style: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    margin: 0;
-    padding: 10px;
-}
-
 .example-2 {
+  list-style: none;
+  position: fixed;
+  bottom: 4%;
+  right: 2%;
+  margin: 0;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;

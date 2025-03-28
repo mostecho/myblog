@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开发日志</title>
+    <link rel="stylesheet" href="./CSS样式/jiazai.css">
+    <link rel="stylesheet" href="./CSS样式/daohang.css">
+    <style>
+/* 优化后的 CSS */
+body {
+    margin: 0;
+    padding: 2rem 1rem;
+    background: #f6f8fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    color: #24292f;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.commit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.commit-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.commit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.commit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, 
+        rgba(3, 102, 214, 0.03) 0%,
+        rgba(3, 102, 214, 0.01) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.commit-card:hover::before {
+    opacity: 1;
+}
+
+.author-avatar {
+    width: 80px;  /* 增大尺寸 */
+    height: 80px; /* 增大尺寸 */
+    border-radius: 50%;
+    border: 2px solid #f0f2f5;
+    position: absolute;
+    right: 1%; /* 微调位置补偿尺寸变化 */
+    top: 1%;   /* 微调位置补偿尺寸变化 */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 添加柔和投影 */
+    object-fit: cover; /* 确保图像不失真 */
+}
+
+.author-avatar:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.commit-meta {
+    padding: 0;
+    gap: 1rem;
+    align-items: start;
+    position: relative;
+}
+
+.commit-message {
+    color: #24292f;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.commit-message::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #0366d6;
+    transition: width 0.3s ease;
+}
+
+.commit-message:hover {
+    color: #0366d6;
+}
+
+.commit-message:hover::after {
+    width: 100%;
+}
+
+.commit-info {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.8rem;
+    color: #6a737d;
+    font-size: 0.9rem;
+}
+
+.commit-info > span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    position: relative;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.commit-info > span:hover {
+    background: rgba(3, 102, 214, 0.05);
+}
+
+.commit-info svg {
+    width: 16px;
+    height: 16px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .author-avatar {
+        position: static;
+        margin: 0 auto 1rem;
+    }
+    
+    .commit-meta {
+        grid-template-columns: 1fr;
+    }
+    
+    .commit-info {
+        flex-direction: column;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+/* 悬停提示优化 */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    bottom: 100%;
+}
+    </style>
+</head>
+<body>
+ 
+  <ul id="nav">
+    <li class="slide1"></li>
+    <li class="slide2"></li>
+    <li><a href="./index.html">首页</a></li>
+    <li><a href="./page1.html">评论区</a></li>
+    <li><a href="page2.html">开发日志</a></li>
+    <li><a href="#">Q&A</a></li>
+    <li><a href="#">赞助</a></li>
+    <br>
+  </ul>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="JS样式/daohang.js"></script>
+
+    <div class="container">
+        <h1 class="page-title">📜 项目更新日志</h1>
+        <div id="commit-container">
+            <!-- 加载状态 -->
+            <div class="loading1">正在加载更新记录...</div>
+        </div>
+    </div>
+
+    <div class="loading">
+      <svg viewbox='0 0 50 50'>
+        <circle r='25' cx='25' cy='25'></circle>
+      </svg>
+      <p>LOADING</p>
+    </div>
+    
+    <p onclick="loading.in('page1.html')"></p>
+    <script src="./JS样式/jiazai.js"></script>
+  
+    <script>
+        // 配置信息
+        const config = {
+            repo: 'mostecho/monstecho.github.io', // 格式: 用户名/仓库名
+            token: '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', // 可选: 在此处填写 GitHub Token 以提高速率限制
+            per_page: 100  // 显示条目数
+        }
+
+        // DOM 元素
+        const container = document.getElementById('commit-container')
+
+        // 获取 Commit 数据
+        fetch(`https://api.github.com/repos/${config.repo}/commits?per_page=${config.per_page}`, {
+            headers: config.token ? { Authorization: `Bearer ${config.token}` } : {}
+        })
+        .then(response => {
+            if (!response.ok) throw new Error(`HTTP 错误! 状态码: ${response.status}`)
+            return response.json()
+        })
+        // 修改 fetch 后的处理逻辑
+.then(commits => {
+            container.innerHTML = `
+                <div class="commit-list">
+                    ${commits.map(c => `
+                        <div class="commit-card">                     
+                            <div class="commit-meta">
+                              <img class="author-avatar" 
+                              src="${c.author ? c.author.avatar_url : '//via.placeholder.com/40'}" 
+                               alt="${c.commit.author.name} 的头像">
+                            <div>
+                              <a href="${c.html_url}" 
+                               class="commit-message" 
+                               target="_blank">
+                                ${c.commit.message.split('\n')[0]} </a>
+                            <!-- 显示作者名 -->
+                            <div>
+                                ${c.commit.author.name}
+                              </div>  
+                              <br> <br>
+                              </div>
+                                <span title="提交时间">
+                                    📅 ${new Date(c.commit.author.date).toLocaleString()}
+                                </span>
+                                <span title="Commit ID">
+                                    🔖 ${c.sha.substring(0,7)}
+                                </span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `
+        })
+        .catch(err => {
+            container.innerHTML = `
+                <div class="error">
+                    ⚠️ 加载失败: ${err.message}<br>
+                    ${err.message.includes('403') ? '（建议添加 GitHub Token 解决速率限制）' : ''}
+                </div>
+            `
+        })
+    </script>
+</body>
+</html>

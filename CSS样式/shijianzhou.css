@@ -6,7 +6,7 @@ margin: 0;
 .shell {
   width: 100%;
   position: relative;
-  padding:1% 0;
+  padding: 10px;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -32,6 +32,7 @@ margin: 0;
   color: #fff;
   font-size: 50px;
   font-weight: normal;
+  padding: 1%;
   margin: 0;
 }
 

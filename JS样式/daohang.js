@@ -1,43 +1,57 @@
 $(document).ready(function () {
+    // 缓存常用DOM元素
+    var $nav = $("#nav");
+    var $slide1 = $nav.find(".slide1");
+    var $slide2 = $nav.find(".slide2");
+    var $navItems = $nav.find("li");
+
     // 页面加载时从 localStorage 获取当前选中项的索引
     var selectedIndex = localStorage.getItem('selectedMenuItem');
     if (selectedIndex) {
         updateSlidePosition(selectedIndex);
     }
 
-    // 点击菜单项时记录索引并设置动画位置
-    $("#nav a").on("click", function () {
-        var index = $(this).parent().index() - 2;
+    // 使用事件委托处理点击和悬停事件
+    $nav.on("click", "a", function() {
+        var index = $navItems.index($(this).parent()) - 2;
         localStorage.setItem('selectedMenuItem', index);
         updateSlidePosition(index);
     });
 
-    // 鼠标悬停动画
-    $("#nav a").on("mouseover", function () {
-        var index = $(this).parent().index() - 2;
-        var position = $(this).parent().position();
-        var width = $(this).parent().width();
-        $("#nav .slide2").css({ opacity: 1, left: position.left, width: width }).addClass("squeeze");
-    });
-
-    // 鼠标移出动画
-    $("#nav a").on("mouseout", function () {
-        $("#nav .slide2").css({ opacity: 0 }).removeClass("squeeze");
-    });
-
-    // 窗口大小改变时更新动画位置
-    $(window).on("resize", function () {
-        var selectedIndex = localStorage.getItem('selectedMenuItem');
-        if (selectedIndex) {
-            updateSlidePosition(selectedIndex);
+    $nav.on({
+        mouseover: function() {
+            var index = $navItems.index($(this).parent()) - 2;
+            var $parent = $(this).parent();
+            $slide2.css({ 
+                opacity: 1, 
+                left: $parent.position().left, 
+                width: $parent.width() 
+            }).addClass("squeeze");
+        },
+        mouseout: function() {
+            $slide2.css({ opacity: 0 }).removeClass("squeeze");
         }
+    }, "a");
+
+    // 添加防抖的resize事件处理
+    var resizeTimer;
+    $(window).on("resize", function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            var selectedIndex = localStorage.getItem('selectedMenuItem');
+            if (selectedIndex) {
+                updateSlidePosition(selectedIndex);
+            }
+        }, 250);
     });
 
-    // 更新动画位置的函数
     function updateSlidePosition(index) {
-        var selectedItem = $("#nav li:nth-of-type(" + (parseInt(index) + 3) + ") a");
-        var position = selectedItem.parent().position();
-        var width = selectedItem.parent().width();
-        $("#nav .slide1").css({ opacity: 1, left: position.left, width: width });
+        var $selectedItem = $navItems.eq(parseInt(index) + 2).find("a");
+        var $parent = $selectedItem.parent();
+        $slide1.css({ 
+            opacity: 1, 
+            left: $parent.position().left, 
+            width: $parent.width() 
+        });
     }
 });

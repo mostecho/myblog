@@ -29,25 +29,6 @@
 </ul>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="JS样式/daohang.js"></script>
-<!--	&lt;!&ndash; From Uiverse.io by JkHuger 黑与白的切换 &ndash;&gt;-->
-<!--	<label for="theme" class="theme">-->
-<!--		<span class="theme__toggle-wrap">-->
-<!--			<input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">-->
-<!--			<span class="theme__fill"></span>-->
-<!--			<span class="theme__icon">-->
-<!--				<span class="theme__icon-part"></span>-->
-<!--				<span class="theme__icon-part"></span>-->
-<!--				<span class="theme__icon-part"></span>-->
-<!--				<span class="theme__icon-part"></span>-->
-<!--				<span class="theme__icon-part"></span>-->
-<!--				<span class="theme__icon-part"></span>-->
-<!--				<span class="theme__icon-part"></span>-->
-<!--				<span class="theme__icon-part"></span>-->
-<!--				<span class="theme__icon-part"></span>-->
-<!--			</span>-->
-<!--		</span>-->
-<!--	</label>-->
-<!--	 From Uiverse.io by JkHuger 黑与白的切换-->
 
 	<div style="">
 		<header>
@@ -79,6 +60,7 @@
 	function jump(target) {
 		window.location.href = target;
 	}
+	
 	document.getElementById('comment-form').addEventListener('submit', function(e) {
        e.preventDefault();
        const content = document.querySelector('textarea').value;

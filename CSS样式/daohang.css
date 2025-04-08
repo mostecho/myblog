@@ -1,14 +1,14 @@
 #nav {
-    justify-content: center;
     position: relative;
     border-radius: 10em;
     list-style: none;
     background-color:white;
     box-shadow: 20px 30px 20px #00000033;
-    padding: 10px;
-    width: 60%;
+    padding: 10px 0;
+    width: 55%;
     display: flex;
-    margin: 0 auto;  /*居中 */
+    justify-content: center;
+    margin: 0 auto; /* 居中*/
 }
 
 #nav li a {
@@ -50,7 +50,7 @@
 }
 @media (max-width: 768px) {
     #nav {
-        padding: 0.5rem;
+        padding: 10px;
         width: 100%;
     }
 

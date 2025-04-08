@@ -7,13 +7,7 @@
 	<title>评论区</title>
 	<link rel="stylesheet" href="./CSS样式/jiazai.css">
 	<link rel="stylesheet" href="./CSS样式/daohang.css">
-	<style>
-		/* 评论区 */
-	 .comment-section { width: 80%; margin: 20px auto; }
-     textarea { width: 50%; height: 100px; padding: 10px; }
-     #comment-list li { border-bottom: 1px solid #eee; padding: 10px; }
-
-	</style>
+	
 </head>
 
 <body>
@@ -30,18 +24,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="JS样式/daohang.js"></script>
 
-	<div style="">
-		<header>
-			<h1>留言区</h1>
-			<div class="comment-section">
-				<form id="comment-form">
-				  <input type="text" placeholder="用户名" required>
-				  <div><textarea placeholder="请输入评论"></textarea></div>
-				  <button type="submit">提交</button>
-				</form>
-				<ul id="comment-list"></ul>
-			</div>
-	</div>
+
+
+<div id="tcomment"></div>
+<script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.42/dist/twikoo.min.js"></script>
+<script>
+twikoo.init({
+  envId: 'https://www.twikoo.monstecho.top', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+  el: '#tcomment', // 容器元素
+  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+  // path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+  // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/twikoojs/twikoo/blob/main/src/client/utils/i18n/index.js
+})
+</script>
 
 	<div class="loading">
 		<svg viewbox='0 0 50 50'>
@@ -68,6 +63,7 @@
        newComment.textContent = content;
        document.getElementById('comment-list').appendChild(newComment);
      });
+
 
 </script>
 

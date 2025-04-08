@@ -8,7 +8,7 @@
     width: 55%;
     display: flex;
     justify-content: center;
-    margin: 0 auto; /* 居中*/
+    margin: 0 auto 40px; /* 居中*/
 }
 
 #nav li a {

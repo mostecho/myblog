@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>赞助</title>
+    <link rel="stylesheet" href="./CSS样式/kuaisu.css">
+    <link rel="stylesheet" href="./CSS样式/jiazai.css">
+    <link rel="stylesheet" href="./CSS样式/daohang.css">
+    <link rel="stylesheet" href="./CSS样式/huadong.css">
+    <script type="text/javascript" src="JS样式/kuaisu.js"></script>
+    <style>
+        #zanzhuButton {
+            display: inline-block;
+            margin: 10px;
+            /* 调整按钮的位置 */
+            padding: 10px 20px;
+            /* 按钮内边距 */
+            background-color: #007bff;
+            /* 按钮背景色 */
+            color: #fff;
+            /* 按钮文字颜色 */
+            border: none;
+            /* 去掉按钮边框 */
+            border-radius: 5px;
+            /* 圆角 */
+            font-size: 16px;
+            /* 字体大小 */
+            cursor: pointer;
+            /* 鼠标悬停样式 */
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="nav">
+        <li class="slide1"></li>
+        <li class="slide2"></li>
+        <li><a href="./index.html">首页</a></li>
+        <li><a href="./page1.html">评论区</a></li>
+        <li><a href="./page2.html">开发日志</a></li>
+        <li><a href="./page3.html">Q&A</a></li>
+        <li><a href="./page4.html">赞助</a></li>
+    </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="JS样式/daohang.js"></script>
+
+    <main>
+        <article style="--index: 0">
+            <div class="article__img">
+                <img src="./img/01.jpg" alt="" />
+            </div>
+            <div class="article__info">
+                <h2>曾经有一个人</h2>
+            </div>
+        </article>
+        <article style="--index: 1">
+            <div class="article__img">
+                <img src="./img/02.jpg" alt="" />
+            </div>
+            <div class="article__info">
+                <h2>他年少无知</h2>
+            </div>
+        </article>
+        <article style="--index: 2">
+            <div class="article__img">
+                <img src="./img/03.jpg" alt="" />
+            </div>
+            <div class="article__info">
+                <h2>他对什么都充满好奇心</h2>
+            </div>
+        </article>
+        <article style="--index: 3">
+            <div class="article__img">
+                <img src="./img/04.jpg" alt="" />
+            </div>
+            <div class="article__info">
+                <h2>有一天他看到了，电脑上无数的代码</h2>
+            </div>
+        </article>
+        <article style="--index: 4">
+            <div class="article__img">
+                <img src="./img/05.jpg" alt="" />
+            </div>
+            <div class="article__info">
+                <h2>从那天起，他便对此充满了好奇心</h2>
+            </div>
+        </article>
+        <article style="--index: 5">
+            <div class="article__img">
+                <img src="./img/06.jpg" alt="" />
+            </div>
+            <div class="article__info">
+                <h2>后来这些代码也就成了他的爱好</h2>
+            </div>
+        </article>
+        <article style="--index: 6">
+            <div class="article__img">
+                <img src="./img/07.jpg" alt="" />
+            </div>
+            <div class="article__info">
+                <h2>而且他也很喜欢玩游戏</h2>
+            </div>
+        </article>
+        <article style="--index: 7">
+            <div class="article__img">
+                <img src="./img/08.jpg" alt="" />
+            </div>
+            <div class="article__info">
+                <h2>所以后来他的梦想就是做游戏</h2>
+            </div>
+        </article>
+        <article style="--index: 8">
+            <div class="article__img">
+                <img src="./img/09.jpg" alt="" />
+            </div>
+            <div class="article__info">
+                <h2>当然他似乎并不会做游戏</h2>
+            </div>
+        </article>
+        <article style="--index: 9">
+            <div class="article__img">
+                <img src="./img/10.jpg" alt="" />
+            </div>
+            <div class="article__info">
+                <h2>所以他做了这个网站</h2>
+            </div>
+        </article>
+    </main>
+
+    <P>赞助方式一：</P>
+    <a href="https://afdian.com/a/monstecho"> <button id="zanzhuButton">点击前往爱发电赞助</button></a>
+    <p>赞助方式二：</p>
+    <p>加作者vx：monstecho(推荐）</p>
+
+
+
+    <div class="loading">
+        <svg viewbox='0 0 50 50'>
+            <circle r='25' cx='25' cy='25'></circle>
+        </svg>
+        <p>LOADING</p>
+    </div>
+
+    <p onclick="loading.in('page4.html')"></p>
+    <script src="./JS样式/jiazai.js"></script>
+
+</body>
+<script>
+    function jump(target) {
+        window.location.href = target;
+    }  //跳转第二位面
+</script>
+
+</html>

@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index:100;
 }
 .example-2 .icon-content {
   margin: 0 10px;

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Q&A</title>
+    <link rel="stylesheet" href="./CSS样式/kuaisu.css">
+    <link rel="stylesheet" href="./CSS样式/jiazai.css">
+    <link rel="stylesheet" href="./CSS样式/daohang.css">
+    <script type="text/javascript" src="JS样式/kuaisu.js"></script>
+
+    <style>
+        #downloadButton {
+            display: inline-block;
+            margin: 10px;
+            /* 调整按钮的位置 */
+            padding: 10px 20px;
+            /* 按钮内边距 */
+            background-color: #007bff;
+            /* 按钮背景色 */
+            color: #fff;
+            /* 按钮文字颜色 */
+            border: none;
+            /* 去掉按钮边框 */
+            border-radius: 5px;
+            /* 圆角 */
+            font-size: 16px;
+            /* 字体大小 */
+            cursor: pointer;
+            /* 鼠标悬停样式 */
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="nav">
+        <li class="slide1"></li>
+        <li class="slide2"></li>
+        <li><a href="./index.html">首页</a></li>
+        <li><a href="./page1.html">评论区</a></li>
+        <li><a href="./page2.html">开发日志</a></li>
+        <li><a href="./page3.html">Q&A</a></li>
+        <li><a href="./page4.html">赞助</a></li>
+    </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="JS样式/daohang.js"></script>
+
+    <button id="downloadButton">点击按钮跳转彩蛋</button>
+
+
+
+
+    <div class=" loading">
+        <svg viewbox='0 0 50 50'>
+            <circle r='25' cx='25' cy='25'></circle>
+        </svg>
+        <p>LOADING</p>
+    </div>
+
+    <p onclick="loading.in('page3.html')"></p>
+    <script src="./JS样式/jiazai.js"></script>
+</body>
+<script>
+    function jump(target) {
+        window.location.href = target;
+    }  //跳转第二位面
+
+    document
+        .getElementById("downloadButton")
+        .addEventListener("click", function () {
+            const fileUrl = "./yuanshen.exe"; // 文件的实际路径
+            const fileName = "原神.exe"; // 下载时保存的文件名
+
+            const a = document.createElement("a"); // 创建一个 <a> 标签元素
+            a.href = fileUrl; // 设置下载链接
+            a.download = fileName; // 设置下载文件名
+            document.body.appendChild(a); // 将 <a> 标签添加到页面
+            a.click(); // 模拟点击 <a> 标签，触发下载
+            document.body.removeChild(a); // 删除 <a> 标签，清理DOM
+        });
+
+</script>
+
+</html>

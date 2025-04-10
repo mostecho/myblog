@@ -7,36 +7,35 @@
 	<title>评论区</title>
 	<link rel="stylesheet" href="./CSS样式/jiazai.css">
 	<link rel="stylesheet" href="./CSS样式/daohang.css">
-	
 </head>
 
 <body>
-<ul id="nav">
-	<li class="slide1"></li>
-	<li class="slide2"></li>
-	<li><a href="./index.html">首页</a></li>
-	<li><a href="./page1.html">评论区</a></li>
-	<li><a href="page2.html">开发日志</a></li>
-	<li><a href="#">Q&A</a></li>
-	<li><a href="#">赞助</a></li>
-	<br>
-</ul>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="JS样式/daohang.js"></script>
+	<ul id="nav">
+		<li class="slide1"></li>
+		<li class="slide2"></li>
+		<li><a href="./index.html">首页</a></li>
+		<li><a href="./page1.html">评论区</a></li>
+		<li><a href="./page2.html">开发日志</a></li>
+		<li><a href="./page3.html">Q&A</a></li>
+		<li><a href="./page4.html">赞助</a></li>
+	</ul>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="JS样式/daohang.js"></script>
 
-
-
-<div id="tcomment"></div>
-<script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.42/dist/twikoo.min.js"></script>
-<script>
-twikoo.init({
-  envId: 'https://www.twikoo.monstecho.top', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-  el: '#tcomment', // 容器元素
-  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
-  // path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
-  // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/twikoojs/twikoo/blob/main/src/client/utils/i18n/index.js
-})
-</script>
+	<p>Tip：输入qq邮箱可以自动获取头像，如果使用其他邮箱可以到 <a
+			href="https://weavatar.com/">weavatar</a>自己设置头像,还支持cn.gravatar.com,cravatar.cn,sdn.geekzu.org,gravatar.loli.net
+	</p>
+	<div id="tcomment"></div>
+	<script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.42/dist/twikoo.min.js"></script>
+	<script>
+		twikoo.init({
+			envId: 'https://www.twikoo.monstecho.top', //Vercel 环境填地址（https://xxx.vercel.app）
+			el: '#tcomment', // 容器元素
+			// region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+			// path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+			// lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/twikoojs/twikoo/blob/main/src/client/utils/i18n/index.js
+		})
+	</script>
 
 	<div class="loading">
 		<svg viewbox='0 0 50 50'>
@@ -44,7 +43,7 @@ twikoo.init({
 		</svg>
 		<p>LOADING</p>
 	</div>
-	
+
 	<p onclick="loading.in('page1.html')"></p>
 	<script src="./JS样式/jiazai.js"></script>
 
@@ -55,16 +54,6 @@ twikoo.init({
 	function jump(target) {
 		window.location.href = target;
 	}
-	
-	document.getElementById('comment-form').addEventListener('submit', function(e) {
-       e.preventDefault();
-       const content = document.querySelector('textarea').value;
-       const newComment = document.createElement('li');
-       newComment.textContent = content;
-       document.getElementById('comment-list').appendChild(newComment);
-     });
-
-
 </script>
 
 </html>
